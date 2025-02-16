@@ -660,7 +660,7 @@ task bwa_mem {
     runtime {
         docker: dockerImage
         disks: 'local-disk ' + ceil(2.5 + refSize + 2.5 * fastqSize) + ' HDD'
-        memory: ceil(if fastqSize < 1 then 2 * memSize else memSize) + 'G'
+        memory: '64 GB'#ceil(if fastqSize < 1 then 2 * memSize else memSize) + 'G'
         cpu: cpu
     }
 
